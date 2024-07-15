@@ -18,7 +18,8 @@
     "framer-motion": "^11.3.2",
     "isbot": "^4.1.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "viem": "^2.17.4"
   },
   "devDependencies": {
     "@remix-run/dev": "^2.10.2",
