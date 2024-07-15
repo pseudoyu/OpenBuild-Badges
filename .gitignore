@@ -4,3 +4,5 @@ node_modules
 /build
 .env
 *.sqlite
+
+.DS_Store

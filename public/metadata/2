@@ -1,0 +1,11 @@
+{
+    "name": "Adventure X 2024 Badge #2",
+    "description": "This badge represents participation in Adventure X 2024",
+    "image": "https://world.pseudoyu.com/badges/images/2.jpg",
+    "attributes": [
+        {
+            "trait_type": "Event",
+            "value": "Adventure X 2024"
+        }
+    ]
+}
