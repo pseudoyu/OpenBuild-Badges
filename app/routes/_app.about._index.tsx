@@ -1,6 +1,3 @@
-import { Button } from "@nextui-org/react";
-import { Link } from "@remix-run/react";
-
 export default function AboutPage() {
   return (
     <div className="flex h-screen justify-center items-center">

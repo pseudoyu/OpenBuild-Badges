@@ -1,7 +1,7 @@
 import { createPublicClient, http, createWalletClient } from "viem";
 import { privateKeyToAccount } from "viem/accounts";
 import { sepolia } from "viem/chains";
-import { badgeAbi } from "./abi";
+import { badgeAbi } from "./contracts/abi";
 
 // Load environment variables
 const privateKey = process.env.PRIVATE_KEY;
