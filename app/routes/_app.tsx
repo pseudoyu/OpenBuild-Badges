@@ -8,6 +8,7 @@ export default function AppLayout() {
           <div className="flex gap-3">
             <Link to="/">Home</Link>
             <Link to="/badges">Badges</Link>
+            <Link to="/about">About</Link>
           </div>
         </div>
       </nav>
@@ -15,5 +16,5 @@ export default function AppLayout() {
         <Outlet />
       </div>
     </div>
-  )
+  );
 }

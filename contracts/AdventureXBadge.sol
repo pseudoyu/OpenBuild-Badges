@@ -9,6 +9,7 @@ import "@openzeppelin/contracts/utils/Strings.sol";
 contract AdventureXBadge is ERC721, Ownable {
     using Counters for Counters.Counter;
     using Strings for uint256;
+
     Counters.Counter private _tokenIds;
 
     struct Badge {
@@ -24,7 +25,10 @@ contract AdventureXBadge is ERC721, Ownable {
 
     event BadgeMinted(uint256 tokenId, address recipient, uint256 timestamp);
 
-    constructor(address initialOwner, string memory baseTokenURI) ERC721("Adventure X 2024 & OpenBuild", "AXT") Ownable(initialOwner) {
+    constructor(address initialOwner, string memory baseTokenURI)
+        ERC721("Adventure X 2024 & OpenBuild", "AXT")
+        Ownable(initialOwner)
+    {
         _baseTokenURI = baseTokenURI;
     }
 
@@ -79,11 +83,7 @@ contract AdventureXBadge is ERC721, Ownable {
         return _badges[tokenId].owner != address(0);
     }
 
-    function _update(address to, uint256 tokenId, address auth)
-        internal
-        override
-        returns (address)
-    {
+    function _update(address to, uint256 tokenId, address auth) internal override returns (address) {
         address from = super._update(to, tokenId, auth);
 
         if (from != address(0)) {
