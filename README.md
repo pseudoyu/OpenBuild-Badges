@@ -1,3 +1,3 @@
-# AdventureX-Badges
+# Activity-Badges
 
-Badges page for AdventureX 2024
+Badges page for Blockchain activities
