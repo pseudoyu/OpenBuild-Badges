@@ -1,5 +1,5 @@
 {
-  "name": "activity-badges",
+  "name": "openbuild-badges",
   "private": true,
   "sideEffects": false,
   "type": "module",
