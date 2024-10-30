@@ -3,7 +3,7 @@ import { Link } from "@remix-run/react";
 
 export default function IndexPage() {
 	return (
-		<div className="flex h-screen justify-center items-center bg-gray-100">
+		<div className="flex h-screen justify-center items-center white">
 			<div className="text-center">
 				<div className="flex flex-col items-center">
 					<img
