@@ -6,7 +6,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 import "@openzeppelin/contracts/utils/Strings.sol";
 
-contract AdventureXBadge is ERC721, Ownable {
+contract OpenBuildBadge is ERC721, Ownable {
     using Counters for Counters.Counter;
     using Strings for uint256;
 
@@ -26,7 +26,7 @@ contract AdventureXBadge is ERC721, Ownable {
     event BadgeMinted(uint256 tokenId, address recipient, uint256 timestamp);
 
     constructor(address initialOwner, string memory baseTokenURI)
-        ERC721("Adventure X 2024 & OpenBuild", "AXT")
+        ERC721("OpenBuildBadge", "OBT")
         Ownable(initialOwner)
     {
         _baseTokenURI = baseTokenURI;
@@ -81,20 +81,5 @@ contract AdventureXBadge is ERC721, Ownable {
 
     function _exists(uint256 tokenId) internal view virtual returns (bool) {
         return _badges[tokenId].owner != address(0);
-    }
-
-    function _update(address to, uint256 tokenId, address auth) internal override returns (address) {
-        address from = super._update(to, tokenId, auth);
-
-        if (from != address(0)) {
-            delete _addressToTokenId[from];
-            _badges[tokenId].owner = to;
-        }
-        if (to != address(0)) {
-            require(_addressToTokenId[to] == 0, "Recipient already has a badge");
-            _addressToTokenId[to] = tokenId;
-        }
-
-        return from;
     }
 }
