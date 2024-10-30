@@ -68,11 +68,11 @@ export default function Badges() {
 				<div className="text-center mb-6">
 					<div className="flex flex-col items-center">
 						<img
-							src="https://image.pseudoyu.com/images/adventurex-badge.jpg"
+							src="/openbuild.svg"
 							alt="Badge Icon"
 							className="w-24 h-24 mb-4"
 						/>
-						<h1 className="text-3xl font-bold mb-4">OpenBuild Special Badge</h1>
+						<h1 className="text-3xl font-bold mb-4">OpenBuild & Invisible Garden</h1>
 					</div>
 				</div>
 				<div className="flex flex-col items-center w-full px-4">

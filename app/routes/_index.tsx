@@ -7,13 +7,13 @@ export default function IndexPage() {
 			<div className="text-center">
 				<div className="flex flex-col items-center">
 					<img
-						src="https://image.pseudoyu.com/images/adventurex-badge.jpg"
+						src="/openbuild.svg"
 						alt="Badge Icon"
 						className="w-24 h-24 mb-4"
 					/>
-					<h1 className="text-4xl font-bold mb-8">OpenBuild Activities</h1>
+					<h1 className="text-4xl font-bold mb-8">OpenBuild & Invisible Garden</h1>
 					<Link to="/badges" className="inline-block">
-						<Button color="primary">Start Your Adventure</Button>
+						<Button color="primary">Claim Yours</Button>
 					</Link>
 				</div>
 			</div>
