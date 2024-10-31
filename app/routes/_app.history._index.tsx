@@ -20,7 +20,7 @@ export default function Component() {
   const { badges } = useLoaderData<typeof loader>()
   const [searchParams, setSearchParams] = useSearchParams()
   const currentPage = Number(searchParams.get("page")) || 1
-  const itemsPerPage = 20
+  const itemsPerPage = 6
 
   const totalPages = Math.ceil(badges.length / itemsPerPage)
   const startIndex = (currentPage - 1) * itemsPerPage
