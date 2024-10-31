@@ -5,7 +5,7 @@ import { getAllBadges } from "~/services/chain.server"
 
 export async function loader() {
   const result = await getAllBadges()
-  if (!result.success) {
+  if (!result.success || !result.badges) {
     return json({ badges: [] })
   }
   const serializedBadges = result.badges.map(badge => ({

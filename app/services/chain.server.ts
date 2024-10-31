@@ -31,6 +31,20 @@ const walletClient = createWalletClient({
   transport: http(rpcUrl),
 });
 
+// Watch for BadgeMinted events
+publicClient.watchContractEvent({
+  address: contractAddress as `0x${string}`,
+  abi: badgeAbi,
+  eventName: 'BadgeMinted',
+  onLogs: ([log]) => {
+    const { tokenId, recipient, timestamp } = log.args;
+    console.log('New Badge Minted!');
+    console.log(`Token ID: ${tokenId}`);
+    console.log(`Recipient: ${recipient}`);
+    console.log(`Timestamp: ${new Date(Number(timestamp) * 1000).toLocaleString()}`);
+  },
+});
+
 // Function to mint a badge
 export async function mintBadge(recipientAddress: `0x${string}`) {
   try {
@@ -48,10 +62,6 @@ export async function mintBadge(recipientAddress: `0x${string}`) {
 
     // Wait for the transaction to be mined
     const receipt = await publicClient.waitForTransactionReceipt({ hash });
-
-    console.log("Badge minted successfully!");
-    console.log("Transaction hash:", hash);
-    console.log("Block number:", receipt.blockNumber);
 
     return {
       success: true,
