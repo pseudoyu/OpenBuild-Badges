@@ -63,3 +63,26 @@ export async function mintBadge(recipientAddress: `0x${string}`) {
     return { success: false, error: (error as Error).message };
   }
 }
+
+// Function to get all badges
+export async function getAllBadges() {
+  try {
+    const badges = await publicClient.readContract({
+      address: contractAddress as `0x${string}`,
+      abi: badgeAbi,
+      functionName: "getAllBadges",
+    });
+
+    return {
+      success: true,
+      badges: badges.map(badge => ({
+        tokenId: badge.tokenId,
+        owner: badge.owner,
+        mintTime: badge.mintTime
+      }))
+    };
+  } catch (error) {
+    console.error("Error fetching badges:", error);
+    return { success: false, error: (error as Error).message };
+  }
+}

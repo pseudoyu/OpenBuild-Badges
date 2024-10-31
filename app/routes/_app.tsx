@@ -17,14 +17,14 @@ export default function AppLayout() {
             </Link>
             <div className="flex items-center gap-4">
               <Link
-                to="/about"
+                to="/history"
                 className="text-gray-600 hover:text-gray-900 transition-colors"
               >
-                About
+                History
               </Link>
               <Link
                 to="/badges"
-                className="bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors font-medium"
+                className="bg-primary/10 hover:bg-primary/20 text-primary font-semibold px-8 py-2 transition-all duration-300 hover:scale-105 hover:shadow-lg rounded-lg"
               >
                 Claim Now
               </Link>
@@ -32,7 +32,7 @@ export default function AppLayout() {
           </div>
         </div>
       </nav>
-      <div className="max-w-[640px] mx-auto md:px-0">
+      <div className="max-w-[840px] mx-auto md:px-0">
         <Outlet />
       </div>
     </div>
