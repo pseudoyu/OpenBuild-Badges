@@ -13,7 +13,8 @@ export async function loader() {
     owner: badge.owner,
     mintTime: badge.mintTime.toString()
   }))
-  return json({ badges: serializedBadges })
+  // Reverse the badges array so newest is first
+  return json({ badges: serializedBadges.reverse() })
 }
 
 export default function Component() {
